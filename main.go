@@ -4,10 +4,12 @@ import (
 	"fmt"
 	"log"
 	"os"
+
+	"github.com/Dbaker1298/voice-to-text-whisperAPI/api/whisper"
 )
 
 func main() {
-	client := whisper.NewClient(whisper.WithKey(os.Getenv("OPEN_API_KEY")))
+	client := whisper.NewClient(whisper.WithKey(os.Getenv("OPENAI_API_KEY")))
 
 	response, err := client.TranscribeFile("file.m4a")
 	if err != nil {
